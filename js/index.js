@@ -41,12 +41,32 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+// Populate nav items
 const navValues = Object.values(siteContent.nav);
+const navElements = document.querySelectorAll('nav>a');
 
-for(i=0; i < navValues.length; i++) {
+for(i=0; i < navElements.length; i++) {
 	document.querySelector(`nav>a:nth-of-type(` + (i+1) + ')').textContent = navValues[i];
 }
 
+// Add cta text
+document.querySelector('.cta-text>h1').textContent = siteContent.cta.h1;
+
+// Add cta button text
+document.querySelector('.cta-text>button').textContent = siteContent.cta.button;
+
+// Add img src
+document.querySelector('section>img').src = siteContent.cta["img-src"];
+
+// Add main content headers
+document.querySelector('.top-content>.text-content>h4').textContent = siteContent["main-content"]["features-h4"];
+
+document.querySelector('.top-content>.text-content:nth-of-type(2)>h4').textContent = siteContent["main-content"]["about-h4"];
+
+
+
+// Add middle img
+document.querySelector('.middle-img').src = siteContent["main-content"]["middle-img-src"];
 
 
 //	document.querySelector(nav:nth-of-type(item.index)).textContent = item.value)
