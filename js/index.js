@@ -63,11 +63,55 @@ document.querySelector('.top-content>.text-content>h4').textContent = siteConten
 
 document.querySelector('.top-content>.text-content:nth-of-type(2)>h4').textContent = siteContent["main-content"]["about-h4"];
 
+document.querySelector('.bottom-content>.text-content>h4').textContent = siteContent["main-content"]["services-h4"];
+
+document.querySelector('.bottom-content>.text-content:nth-of-type(2)>h4').textContent = siteContent["main-content"]["product-h4"];
+
+document.querySelector('.bottom-content>.text-content:nth-of-type(3)>h4').textContent = siteContent["main-content"]["vision-h4"];
+
+
+// Add main content paragraphs
+document.querySelector('.top-content>.text-content>p').textContent = siteContent["main-content"]["features-content"];
+
+document.querySelector('.top-content>.text-content:nth-of-type(2)>p').textContent = siteContent["main-content"]["about-content"];
+
+document.querySelector('.bottom-content>.text-content>p').textContent = siteContent["main-content"]["services-content"];
+
+document.querySelector('.bottom-content>.text-content:nth-of-type(2)>p').textContent = siteContent["main-content"]["product-content"];
+
+document.querySelector('.bottom-content>.text-content:nth-of-type(3)>p').textContent = siteContent["main-content"]["vision-content"];
 
 
 // Add middle img
 document.querySelector('.middle-img').src = siteContent["main-content"]["middle-img-src"];
 
 
-//	document.querySelector(nav:nth-of-type(item.index)).textContent = item.value)
-//console.log(siteContent.nav)
+// Add contact info
+document.querySelector('.contact>h4').textContent = siteContent.contact["contact-h4"];
+document.querySelector('.contact>p:nth-of-type(1)').textContent = siteContent.contact["address"];
+document.querySelector('.contact>p:nth-of-type(2)').textContent = siteContent.contact["phone"];
+document.querySelector('.contact>p:nth-of-type(3)').textContent = siteContent.contact["email"];
+
+
+// Add footer content
+document.querySelector('footer>p').textContent = siteContent.footer.copyright;
+
+
+// Change nav color
+document.querySelectorAll('nav>a').forEach(item => item.style.color = "green");
+
+// Add nav items
+const nav = document.querySelector('nav');
+
+const homeNavItem = document.createElement('a');
+homeNavItem.textContent = "Home";
+homeNavItem.style.color = "green";
+
+const blogNavItem = document.createElement('a');
+blogNavItem.textContent = "Blog";
+blogNavItem.style.color = "green";
+
+nav.appendChild(blogNavItem);
+nav.prepend(homeNavItem);
+
+
